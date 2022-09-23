@@ -1,3 +1,5 @@
+package model;
+
 public class Carta {
     private Valor valor;
     private Naipe naipe;
@@ -20,6 +22,6 @@ public class Carta {
 
     @Override
     public String toString() {
-        return this.valor + " de " + this.naipe;
+        return valor + " de " + naipe;
     }
 }

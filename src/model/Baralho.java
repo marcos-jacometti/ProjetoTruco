@@ -1,3 +1,5 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -25,5 +27,16 @@ public class Baralho {
 
     public void embaralhar(){
         Collections.shuffle(cartas);
+    }
+
+    public void exibir(){
+        for(Carta carta : cartas){
+            System.out.println(carta);
+        }
+    }
+
+    public Carta retirarUmCarta() {
+        Collections.shuffle(cartas);
+        return cartas.remove(0);
     }
 }
