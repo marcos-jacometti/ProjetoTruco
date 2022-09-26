@@ -1,5 +1,8 @@
 package model;
 public enum Valor {
-    As, Dois, Tres, Quatro, Cinco, Seis,
-    Sete, Dama, Valete, Reis
+    Quatro, Cinco, Seis, Sete, Damas, Valete, Reis, As, Dois, Tres;
+
+    public int ordinal(int i) {
+        return 0;
+    }
 }

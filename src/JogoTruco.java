@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import model.Baralho;
-import model.Carta;
 import model.Jogadores;
+import model.Truco;
 
 public class JogoTruco {
     public List<Jogadores> lista = new ArrayList<>();
+    private Truco tr = new Truco();
+    private Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         JogoTruco jt = new JogoTruco();
         Scanner sc = new Scanner(System.in);
@@ -73,19 +74,7 @@ public class JogoTruco {
             System.out.println("Nao encontramos nenhum marreco, por favor cadastre-os");
             System.out.println();
         }else{
-            Baralho baralho = new Baralho();
-            baralho.embaralhar();
-            System.out.println();
-
-            Carta carta1, carta2, carta3;
-            carta1 = baralho.retirarUmCarta();
-            carta2 = baralho.retirarUmCarta();
-            carta3 = baralho.retirarUmCarta();
-
-            System.out.println(carta1);
-            System.out.println(carta2);
-            System.out.println(carta3);
-            System.out.println();
+            System.out.println(Truco.menu(tr, sc));
         }
     }
 
