@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import model.Baralho;
+import model.Carta;
 import model.Jogadores;
 import model.Truco;
 
@@ -69,6 +71,24 @@ public class JogoTruco {
     }
 
     public void execCartas(){
+        Baralho baralho = new Baralho();
+        baralho.embaralhar();
+        System.out.println();
+
+        Carta carta1, carta2, carta3, vira;
+        carta1 = baralho.retirarUmCarta();
+        carta2 = baralho.retirarUmCarta();
+        carta3 = baralho.retirarUmCarta();
+        vira = baralho.retirarUmCarta();
+
+        System.out.println("Suas cartas: ");
+        System.out.println(carta1);
+        System.out.println(carta2);
+        System.out.println(carta3);
+        System.out.println();
+        System.out.println("Vira: " + vira);
+        System.out.println();
+
         boolean jogador = lista.isEmpty();
         if(jogador == true){
             System.out.println("Nao encontramos nenhum marreco, por favor cadastre-os");

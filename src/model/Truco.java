@@ -51,10 +51,7 @@ public class Truco {
                 carta4 = baralho.retirarUmCarta();
                 System.out.println("Carta do adversario: " + carta4);
 
-                if(carta1.getValor().ordinal() > vira.getValor().ordinal()){
-                    System.out.println("manilha");
-
-                }else if(carta1.getValor().ordinal() > carta4.getValor().ordinal()){
+                if(carta1.getValor().ordinal() > carta4.getValor().ordinal()){
                     System.out.println("Voce ganhou a rodada! ");
                     seusPontos ++;
                     System.out.println("Seus pontos: " + seusPontos);
