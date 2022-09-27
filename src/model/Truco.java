@@ -14,7 +14,8 @@ public class Truco {
     public static Carta carta6 = new Carta();
     public static Carta vira = new Carta();
     public static Baralho baralho = new Baralho();
-    public static Carta addCarta = new Carta();
+    static int seusPontos = 0;
+    static int pontosAdv = 0;
     
     public static void main(String[] args) {
        Truco tr = new Truco();
@@ -23,7 +24,7 @@ public class Truco {
        distribuirCartas();
        do{
         menu(tr, sc);
-       }while(opcs != 4);
+       }while(opcs!=4);
     }
 
     public static void distribuirCartas(){
@@ -55,123 +56,123 @@ public class Truco {
         System.out.println("2. Jogar carta: " + carta2);
         System.out.println("3. Jogar cata: " + carta3);
         System.out.println("Digite sua opcao: ");
+        
         opcs = Integer.parseInt(sc.nextLine());
-        int seusPontos = 0;
-        int ptAdver = 0;
-        int seusPontos2 = seusPontos;
-        int ptAdver2 = ptAdver;
-        int seusPontos3 = seusPontos2;
-        int ptAdver3 = ptAdver2;
-
-            switch(opcs){
-                case 1:
-                    System.out.println();
-                    System.out.println("Carta jogada: " + carta1);
-                    System.out.println("Carta do adversario: " + carta4);
-
-                    if(carta1 == null){
-                        System.out.println("Carta ja foi jogada, tente outra");
-                    }else if(carta1.getValor().ordinal() + 1 > carta4.getValor().ordinal()){
-                        System.out.println("Voce ganhou a rodada! ");
-                        seusPontos ++;
-                        System.out.println("Seus pontos: " + seusPontos);
-                        System.out.println("Pontos adversario: " + ptAdver);
-                    }else if(carta4.getValor().ordinal() + 1 > carta1.getValor().ordinal()){
-                        System.out.println("Ponto para o adversario");
-                        ptAdver ++;
-                        System.out.println("Seus pontos: " + seusPontos);
-                        System.out.println("Pontos adversario: " + ptAdver);
-                    }else if(carta1.getValor().ordinal()> carta4.getValor().ordinal()){
-                        System.out.println("Voce ganhou a rodada! ");
-                        seusPontos ++;
-                        System.out.println("Seus pontos: " + seusPontos);
-                        System.out.println("Pontos adversario: " + ptAdver);
-                    }else if(carta1.getValor().ordinal() == carta4.getValor().ordinal()){
-                        System.out.println("Empate");
-                        System.out.println("Seus pontos: " + seusPontos);
-                        System.out.println("Pontos adversario: " + ptAdver);
-                    }else{
-                        System.out.println("Ponto para o adversario");
-                        ptAdver ++;
-                        System.out.println("Seus pontos: " + seusPontos);
-                        System.out.println("Pontos adversario: " + ptAdver);
-                    }
-                    carta1 = null;
-                break;
-                
-                case 2:
-                    System.out.println();
-                    System.out.println("Carta jogada: " + carta2);
-                    System.out.println("Carta do adversario: " + carta5);
-
-                    if(carta2 == null){
-                        System.out.println("Carta ja foi jogada, tente outra");
-                    }else if(carta2.getValor().ordinal() + 1 > carta5.getValor().ordinal()){
-                        System.out.println("Voce ganhou a rodada! ");
-                        seusPontos2 ++;
-                        System.out.println("Seus pontos: " + seusPontos2);
-                        System.out.println("Pontos adversario: " + ptAdver2);
-                    }else if(carta5.getValor().ordinal() + 1 > carta2.getValor().ordinal()){
-                        System.out.println("Ponto para o adversario");
-                        ptAdver2 ++;
-                        System.out.println("Seus pontos: " + seusPontos2);
-                        System.out.println("Pontos adversario: " + ptAdver2);
-                    }else if(carta2.getValor().ordinal()> carta5.getValor().ordinal()){
-                        System.out.println("Voce ganhou a rodada! ");
-                        seusPontos2 ++;
-                        System.out.println("Seus pontos: " + seusPontos2);
-                        System.out.println("Pontos adversario: " + ptAdver2);
-                    }else if(carta2.getValor().ordinal() == carta5.getValor().ordinal()){
-                        System.out.println("Empate");
-                        System.out.println("Seus pontos: " + seusPontos2);
-                        System.out.println("Pontos adversario: " + ptAdver2);
-                    }else{
-                        System.out.println("Ponto para o adversario");
-                        ptAdver2 ++;
-                        System.out.println("Seus pontos: " + seusPontos2);
-                        System.out.println("Pontos adversario: " + ptAdver2);
-                    }
-                    carta2 = null;
-                break;
+            if(seusPontos == 2){
+                System.out.println("Voce venceu o marreco");
+            }else if(pontosAdv == 2){
+                System.out.println("Voce perdeu, seu marreco");
+            }else{
+                switch(opcs){
+                    case 1:
+                        System.out.println();
+                        System.out.println("Carta jogada: " + carta1);
+                        System.out.println("Carta do adversario: " + carta4);
     
-                case 3:
-                    System.out.println();
-                        System.out.println("Carta jogada: " + carta3);
-                        System.out.println("Carta do adversario: " + carta6);
-
-                        if(carta3 == null){
+                        if(carta1 == null){
                             System.out.println("Carta ja foi jogada, tente outra");
-                        }else if(carta3.getValor().ordinal() + 1 > carta6.getValor().ordinal()){
+                        }else if(carta1.getValor().ordinal() + 1 > carta4.getValor().ordinal()){
                             System.out.println("Voce ganhou a rodada! ");
-                            seusPontos3 ++;
-                            System.out.println("Seus pontos: " + seusPontos3);
-                            System.out.println("Pontos adversario: " + ptAdver3);
-                        }else if(carta6.getValor().ordinal() + 1 > carta3.getValor().ordinal()){
+                            seusPontos ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else if(carta4.getValor().ordinal() + 1 > carta1.getValor().ordinal()){
                             System.out.println("Ponto para o adversario");
-                            ptAdver3 ++;
-                            System.out.println("Seus pontos: " + seusPontos3);
-                            System.out.println("Pontos adversario: " + ptAdver3);
-                        }else if(carta3.getValor().ordinal()> carta6.getValor().ordinal()){
+                            pontosAdv ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else if(carta1.getValor().ordinal()> carta4.getValor().ordinal()){
                             System.out.println("Voce ganhou a rodada! ");
-                            seusPontos3 ++;
-                            System.out.println("Seus pontos: " + seusPontos3);
-                            System.out.println("Pontos adversario: " + ptAdver3);
-                        }else if(carta3.getValor().ordinal() == carta6.getValor().ordinal()){
+                            seusPontos ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else if(carta1.getValor().ordinal() == carta4.getValor().ordinal()){
                             System.out.println("Empate");
-                            System.out.println("Seus pontos: " + seusPontos3);
-                            System.out.println("Pontos adversario: " + ptAdver3);
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
                         }else{
                             System.out.println("Ponto para o adversario");
-                            ptAdver3 ++;
-                            System.out.println("Seus pontos: " + seusPontos3);
-                            System.out.println("Pontos adversario: " + ptAdver3);
+                            pontosAdv ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
                         }
-                        carta3 = null;
-                break;
+                        carta1 = null;
+                    break;
+                    
+                    case 2:
+                        System.out.println();
+                        System.out.println("Carta jogada: " + carta2);
+                        System.out.println("Carta do adversario: " + carta5);
     
-                default:
-                    System.out.println("opcao invalida");
+                        if(carta2 == null){
+                            System.out.println("Carta ja foi jogada, tente outra");
+                        }else if(carta2.getValor().ordinal() + 1 > carta5.getValor().ordinal()){
+                            System.out.println("Voce ganhou a rodada! ");
+                            seusPontos ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else if(carta5.getValor().ordinal() + 1 > carta2.getValor().ordinal()){
+                            System.out.println("Ponto para o adversario");
+                            pontosAdv ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else if(carta2.getValor().ordinal()> carta5.getValor().ordinal()){
+                            System.out.println("Voce ganhou a rodada! ");
+                            seusPontos ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else if(carta2.getValor().ordinal() == carta5.getValor().ordinal()){
+                            System.out.println("Empate");
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }else{
+                            System.out.println("Ponto para o adversario");
+                            pontosAdv ++;
+                            System.out.println("Seus pontos: " + seusPontos);
+                            System.out.println("Pontos adversario: " + pontosAdv);
+                        }
+                        carta2 = null;
+                    break;
+        
+                    case 3:
+                        System.out.println();
+                            System.out.println("Carta jogada: " + carta3);
+                            System.out.println("Carta do adversario: " + carta6);
+    
+                            if(carta3 == null){
+                                System.out.println("Carta ja foi jogada, tente outra");
+                            }else if(carta3.getValor().ordinal() + 1 > carta6.getValor().ordinal()){
+                                System.out.println("Voce ganhou a rodada! ");
+                                seusPontos ++;
+                                System.out.println("Seus pontos: " + seusPontos);
+                                System.out.println("Pontos adversario: " + pontosAdv);
+                            }else if(carta6.getValor().ordinal() + 1 > carta3.getValor().ordinal()){
+                                System.out.println("Ponto para o adversario");
+                                pontosAdv ++;
+                                System.out.println("Seus pontos: " + seusPontos);
+                                System.out.println("Pontos adversario: " + pontosAdv);
+                            }else if(carta3.getValor().ordinal()> carta6.getValor().ordinal()){
+                                System.out.println("Voce ganhou a rodada! ");
+                                seusPontos ++;
+                                System.out.println("Seus pontos: " + seusPontos);
+                                System.out.println("Pontos adversario: " + pontosAdv);
+                            }else if(carta3.getValor().ordinal() == carta6.getValor().ordinal()){
+                                System.out.println("Empate");
+                                System.out.println("Seus pontos: " + seusPontos);
+                                System.out.println("Pontos adversario: " + pontosAdv);
+                            }else{
+                                System.out.println("Ponto para o adversario");
+                                pontosAdv ++;
+                                System.out.println("Seus pontos: " + seusPontos);
+                                System.out.println("Pontos adversario: " + pontosAdv);
+                            }
+                            carta3 = null;
+                    break;
+        
+                    default:
+                        System.out.println("opcao invalida");
+                }
             }
-        return opcs;
+            return opcs;
     }
 }
