@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.Jogadores;
-import model.Truco;
+import model.controller.Truco;
 
 public class JogoTruco {
     public List<Jogadores> lista = new ArrayList<>();
@@ -21,30 +21,26 @@ public class JogoTruco {
     private static int menu(JogoTruco jt, Scanner sc){
         int opc;
         System.out.println("*** TRUCO DE MARRECO ***");
-        System.out.println("1. Cadastrar os Marrecos");
-        System.out.println("2. Jogar truco");
-        System.out.println("3. Listar marrecos");
-        System.out.println("4. Sair");
+        System.out.println();
+        System.out.println("1. Jogar truco");
+        System.out.println("2. Listar marrecos");
+        System.out.println("3. Sair");
         System.out.println("Digite sua opcao: ");
         opc = Integer.parseInt(sc.nextLine());
 
         switch(opc){
             case 1:
-                jt.execCadastrar(sc);
+
             break;
 
             case 2:
-                jt.execCartas();
-            break;
-
-            case 3:
                 jt.execJogadores();
             break;
 
-            case 4:
+            case 3:
                 System.out.println("Fim da trucada");
             break;
-
+            
             default:
                 System.out.println("Opcao nao encontrada");
         }

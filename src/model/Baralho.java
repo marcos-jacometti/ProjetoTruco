@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import model.enumerated.Naipe;
+import model.enumerated.Valor;
+
 public class Baralho {
     private List<Carta> cartas = new ArrayList<>();
-
+  
     public Baralho(){
         for(Valor valor : Valor.values()){
             for(Naipe naipe : Naipe.values()){
@@ -17,22 +20,9 @@ public class Baralho {
             }
         }
     }
-    public String listarCartas(){
-        StringBuilder sb = new StringBuilder();
-        for(Carta carta : cartas){
-            sb.append(carta).append("\n");
-        }
-        return sb.toString();
-    }
 
     public void embaralhar(){
         Collections.shuffle(cartas);
-    }
-
-    public void exibir(){
-        for(Carta carta : cartas){
-            System.out.println(carta);
-        }
     }
 
     public Carta retirarUmCarta() {

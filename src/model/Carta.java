@@ -1,5 +1,8 @@
 package model;
 
+import model.enumerated.Naipe;
+import model.enumerated.Valor;
+
 public class Carta {
     private Valor valor;
     private Naipe naipe;

@@ -1,8 +1,11 @@
-package model;
+package model.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import model.Baralho;
+import model.Carta;
 
 public class Truco {
     public static List<Carta> lista = new ArrayList<>();
@@ -16,17 +19,6 @@ public class Truco {
     public static Baralho baralho = new Baralho();
     static int seusPontos = 0;
     static int pontosAdv = 0;
-    
-    public static void main(String[] args) {
-       Truco tr = new Truco();
-       Scanner sc = new Scanner(System.in);
-       int opcs = 0;
-       distribuirCartas();
-       do{
-        menu(tr, sc);
-       }while(opcs!=4);
-    }
-
     public static void distribuirCartas(){
         baralho.embaralhar();
         System.out.println();
@@ -39,30 +31,30 @@ public class Truco {
         carta6 = baralho.retirarUmCarta();
         vira = baralho.retirarUmCarta();
     }
+    
+    public static void main(String[] args) {
+       Truco tr = new Truco();
+       Scanner sc = new Scanner(System.in);
+       int opcs = 0;
+       distribuirCartas();
+       do{
+        menu(tr, sc);
+       }while(opcs!=4);
+    }
 
     public static int menu(Truco tr, Scanner sc){
-        System.out.println();
-        System.out.println("Suas cartas: ");
-        System.out.println(carta1);
-        System.out.println(carta2);
-        System.out.println(carta3);
-        System.out.println();
-        System.out.println("Vira: " + vira);
-        System.out.println();
-        
         int opcs;
+        System.out.println();
         System.out.println("*** TRUCO DE MARRECO ***");
         System.out.println("1. Jogar carta: " + carta1);
         System.out.println("2. Jogar carta: " + carta2);
         System.out.println("3. Jogar cata: " + carta3);
+        System.out.println();
+        System.out.println("Vira: " + vira);
         System.out.println("Digite sua opcao: ");
-        
+        System.out.println();
         opcs = Integer.parseInt(sc.nextLine());
-            if(seusPontos == 2){
-                System.out.println("Voce venceu o marreco");
-            }else if(pontosAdv == 2){
-                System.out.println("Voce perdeu, seu marreco");
-            }else{
+          
                 switch(opcs){
                     case 1:
                         System.out.println();
@@ -172,7 +164,7 @@ public class Truco {
                     default:
                         System.out.println("opcao invalida");
                 }
-            }
+            
             return opcs;
     }
 }
