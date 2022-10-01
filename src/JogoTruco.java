@@ -3,11 +3,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import model.Jogadores;
-import model.controller.Truco;
 
 public class JogoTruco {
     public List<Jogadores> lista = new ArrayList<>();
-    private Truco tr = new Truco();
     private Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         JogoTruco jt = new JogoTruco();
@@ -70,7 +68,7 @@ public class JogoTruco {
             System.out.println("Nao encontramos nenhum marreco, por favor cadastre-os");
             System.out.println();
         }else{
-            System.out.println(Truco.menu(tr, sc));
+            
         }
     }
 

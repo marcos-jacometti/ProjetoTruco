@@ -25,7 +25,6 @@ public class PainelController {
     }
 
     public static int controller(PainelController pc, Scanner sc){
-       
             int op;
             System.out.println();
             System.out.println("Rodada: " + Turno.rodada);
@@ -49,19 +48,19 @@ public class PainelController {
                 break;
 
                 case 2:
-
+                    PartidaController.caseCarta2();
                 break;
 
                 case 3:
-
+                    PartidaController.caseCarta3();
                 break;
 
                 case 4:
-
+                    PartidaController.case4();
                 break;
 
                 case 5:
-
+                    PartidaController.case5();
                 break;
 
                 default:
