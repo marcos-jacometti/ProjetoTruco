@@ -8,6 +8,7 @@ import model.Baralho;
 import model.Carta;
 import model.DistribuirCartas;
 import model.Pontos;
+import model.Truco;
 import model.Turno;
 
 public class PainelController {
@@ -25,6 +26,27 @@ public class PainelController {
     }
 
     public static int controller(PainelController pc, Scanner sc){
+            if(Pontos.somarTentos >= 12){
+                System.out.println("++++++++++++Voce ganhou o jogo++++++++++++");
+            }else if(Pontos.somarTentosAd >= 12){
+                System.out.println("++++++++++++Voce perdeu o jogo++++++++++++");
+            }
+            if(Truco.pedidoTruco == 0){
+                Pontos.SomarPtsTruco = 0;
+                Pontos.SomarPtsTrucoAd = 0;
+            }
+            if(Truco.pedidoTruco == 1 && Pontos.SomarPtsTruco == 2){
+                Pontos.somarTentos = Pontos.somarTentos + 2;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Truco.pedidoTruco = 0;
+            }else if(Truco.pedidoTruco == 1 && Pontos.SomarPtsTrucoAd == 2){
+                Pontos.somarTentosAd = Pontos.somarTentosAd + 2;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Truco.pedidoTruco = 0;
+            }
+            
             int op;
             System.out.println();
             System.out.println("Rodada: " + Turno.rodada);
@@ -56,18 +78,16 @@ public class PainelController {
                 break;
 
                 case 4:
-                    PartidaController.case4();
+                    PartidaController.caseTruco();
                 break;
 
                 case 5:
-                    PartidaController.case5();
+                    PartidaController.caseCorrer();
                 break;
 
                 default:
                     System.out.println("***Opcao nao encontrada***");
             }
             return op;
-        
-        
     }
 }

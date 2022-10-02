@@ -15,6 +15,7 @@ public class DistribuirCartas {
     public static Carta vira = new Carta();
 
     public static int distribuirCartas(){
+        baralho = new Baralho();
         baralho.embaralhar();
         carta1 = baralho.retirarUmCarta();
         carta2 = baralho.retirarUmCarta();
