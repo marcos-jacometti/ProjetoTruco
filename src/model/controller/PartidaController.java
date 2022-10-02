@@ -14,7 +14,7 @@ public class PartidaController {
 
         if(DistribuirCartas.carta1 == null){
             System.out.println("***Carta ja foi jogada, tente outra***");
-        }else if(DistribuirCartas.carta1.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }/*else if(DistribuirCartas.carta1.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -24,7 +24,7 @@ public class PartidaController {
             Pontos.SomarPtsAdv++;
             Pontos.SomarPtsTrucoAd++;
             Turno.rodada++;
-        }else if(DistribuirCartas.carta1.getValor().ordinal() > DistribuirCartas.carta4.getValor().ordinal()){
+        }else */if(DistribuirCartas.carta1.getValor().ordinal() > DistribuirCartas.carta4.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -75,7 +75,7 @@ public class PartidaController {
 
         if(DistribuirCartas.carta2 == null){
             System.out.println("***Carta ja foi jogada, tente outra***");
-        }else if(DistribuirCartas.carta2.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }/*else if(DistribuirCartas.carta2.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -85,7 +85,7 @@ public class PartidaController {
             Pontos.SomarPtsAdv++;
             Pontos.SomarPtsTrucoAd++;
             Turno.rodada++;
-        }else if(DistribuirCartas.carta2.getValor().ordinal() > DistribuirCartas.carta5.getValor().ordinal()){
+        }else */if(DistribuirCartas.carta2.getValor().ordinal() > DistribuirCartas.carta5.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -136,7 +136,7 @@ public class PartidaController {
 
         if(DistribuirCartas.carta3 == null){
             System.out.println("***Carta ja foi jogada, tente outra***");
-        }else if(DistribuirCartas.carta3.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }/*else if(DistribuirCartas.carta3.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -146,7 +146,7 @@ public class PartidaController {
             Pontos.SomarPtsAdv++;
             Pontos.SomarPtsTrucoAd++;
             Turno.rodada++;
-        }else if(DistribuirCartas.carta3.getValor().ordinal() > DistribuirCartas.carta6.getValor().ordinal()){
+        }else */if(DistribuirCartas.carta3.getValor().ordinal() > DistribuirCartas.carta6.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -191,9 +191,9 @@ public class PartidaController {
 
     public static int caseTruco(){
         System.out.println("Trucoooooooooooooooo marreco");
-        if(DistribuirCartas.carta4.getValor().ordinal(+1) > DistribuirCartas.vira.getValor().ordinal() ||
-           DistribuirCartas.carta5.getValor().ordinal(+1) > DistribuirCartas.vira.getValor().ordinal() ||
-           DistribuirCartas.carta6.getValor().ordinal(+1) > DistribuirCartas.vira.getValor().ordinal()){
+        if(DistribuirCartas.carta4.getValor().ordinal() > DistribuirCartas.vira.getValor().ordinal() ||
+           DistribuirCartas.carta5.getValor().ordinal() > DistribuirCartas.vira.getValor().ordinal() ||
+           DistribuirCartas.carta6.getValor().ordinal() > DistribuirCartas.vira.getValor().ordinal()){
                 System.out.println("***Desce ladrao****");
                 Truco.CaseTruco();
         }else{
