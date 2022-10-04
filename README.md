@@ -23,7 +23,7 @@ Com os marrecos cadastrados, escolha a opção 1 do menu para iniciar a partida.
 ```
 
 ## Contatos:
-Aluno: Marcos Vinícius Jacometti
+Aluno: Marcos Vinícius Jacometti // 
 Aluno: Luiz Fernando Moretto
 
 Obrigado! :)
