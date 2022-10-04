@@ -11,20 +11,49 @@ public class PartidaController {
         System.out.println("Sua Carta: " + DistribuirCartas.carta1);
         System.out.println("Carta Adversario: " + DistribuirCartas.carta4);
         System.out.println();
-
+       
         if(DistribuirCartas.carta1 == null){
             System.out.println("***Carta ja foi jogada, tente outra***");
-        }/*else if(DistribuirCartas.carta1.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }else if(Turno.rodada == 1 && DistribuirCartas.carta1.getValor().ordinal() == DistribuirCartas.carta4.getValor().ordinal()){
+            System.out.println("Empate, mostre sua maior carta");
+            Turno.rodada++;
+            if(DistribuirCartas.carta2.getValor().ordinal() >= DistribuirCartas.carta6.getValor().ordinal() ||
+               DistribuirCartas.carta3.getValor().ordinal() >= DistribuirCartas.carta6.getValor().ordinal()){
+                Pontos.somarTentos++;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Pontos.somarPontos = 0;
+                System.out.println("***Voce ganhou a rodada***");
+            }else{
+                Pontos.somarTentosAd++;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Pontos.SomarPtsAdv = 0;
+                System.out.println("***Voce perdeu a rodada***");
+            }
+        }else if(DistribuirCartas.carta1.getValor().ordinal() == DistribuirCartas.manilha && DistribuirCartas.carta4.getValor().ordinal() == DistribuirCartas.manilha){
+            if(DistribuirCartas.carta1.getNaipe().ordinal() > DistribuirCartas.carta4.getNaipe().ordinal()){
+                System.out.println("Rodada ganha");
+                Pontos.somarPontos++;
+                Pontos.SomarPtsTruco++;
+                Turno.rodada++;
+            }else{
+                System.out.println("Voce perdeu");
+                Pontos.SomarPtsAdv++;
+                Pontos.SomarPtsTrucoAd++;
+                Turno.rodada++;
+            }
+        }else if(DistribuirCartas.carta1.getValor().ordinal() == DistribuirCartas.manilha){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
             Turno.rodada++;
-        }else if(DistribuirCartas.carta4.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }else if(DistribuirCartas.carta4.getValor().ordinal() == DistribuirCartas.manilha){
             System.out.println("Voce perdeu");
             Pontos.SomarPtsAdv++;
             Pontos.SomarPtsTrucoAd++;
             Turno.rodada++;
-        }else */if(DistribuirCartas.carta1.getValor().ordinal() > DistribuirCartas.carta4.getValor().ordinal()){
+        }else if(DistribuirCartas.carta1.getValor().ordinal() > DistribuirCartas.carta4.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -75,17 +104,46 @@ public class PartidaController {
 
         if(DistribuirCartas.carta2 == null){
             System.out.println("***Carta ja foi jogada, tente outra***");
-        }/*else if(DistribuirCartas.carta2.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }else if(Turno.rodada == 1 && DistribuirCartas.carta2.getValor().ordinal() == DistribuirCartas.carta5.getValor().ordinal()){
+            System.out.println("Empate, mostre sua maior carta");
+            Turno.rodada++;
+            if(DistribuirCartas.carta1.getValor().ordinal() >= DistribuirCartas.carta4.getValor().ordinal() ||
+               DistribuirCartas.carta3.getValor().ordinal() >= DistribuirCartas.carta4.getValor().ordinal()){
+                Pontos.somarTentos++;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Pontos.somarPontos = 0;
+                System.out.println("***Voce ganhou a rodada***");
+            }else{
+                Pontos.somarTentosAd++;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Pontos.SomarPtsAdv = 0;
+                System.out.println("***Voce perdeu a rodada***");
+            }
+        }else if(DistribuirCartas.carta2.getValor().ordinal() == DistribuirCartas.manilha && DistribuirCartas.carta5.getValor().ordinal() == DistribuirCartas.manilha){
+            if(DistribuirCartas.carta2.getNaipe().ordinal() > DistribuirCartas.carta5.getNaipe().ordinal()){
+                System.out.println("Rodada ganha");
+                Pontos.somarPontos++;
+                Pontos.SomarPtsTruco++;
+                Turno.rodada++;
+            }else{
+                System.out.println("Voce perdeu");
+                Pontos.SomarPtsAdv++;
+                Pontos.SomarPtsTrucoAd++;
+                Turno.rodada++;
+            }
+        }else if(DistribuirCartas.carta2.getValor().ordinal() == DistribuirCartas.manilha){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
             Turno.rodada++;
-        }else if(DistribuirCartas.carta5.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }else if(DistribuirCartas.carta5.getValor().ordinal() == DistribuirCartas.manilha){
             System.out.println("Voce perdeu");
             Pontos.SomarPtsAdv++;
             Pontos.SomarPtsTrucoAd++;
             Turno.rodada++;
-        }else */if(DistribuirCartas.carta2.getValor().ordinal() > DistribuirCartas.carta5.getValor().ordinal()){
+        }else if(DistribuirCartas.carta2.getValor().ordinal() > DistribuirCartas.carta5.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -136,17 +194,46 @@ public class PartidaController {
 
         if(DistribuirCartas.carta3 == null){
             System.out.println("***Carta ja foi jogada, tente outra***");
-        }/*else if(DistribuirCartas.carta3.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }else if(Turno.rodada == 1 && DistribuirCartas.carta3.getValor().ordinal() == DistribuirCartas.carta6.getValor().ordinal()){
+            System.out.println("Empate, mostre sua maior carta");
+            Turno.rodada++;
+            if(DistribuirCartas.carta1.getValor().ordinal() >= DistribuirCartas.carta5.getValor().ordinal() ||
+               DistribuirCartas.carta2.getValor().ordinal() >= DistribuirCartas.carta5.getValor().ordinal()){
+                Pontos.somarTentos++;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Pontos.somarPontos = 0;
+                System.out.println("***Voce ganhou a rodada***");
+            }else{
+                Pontos.somarTentosAd++;
+                Turno.rodada = 1;
+                DistribuirCartas.distribuirCartas();
+                Pontos.SomarPtsAdv = 0;
+                System.out.println("***Voce perdeu a rodada***");
+            }
+        }else if(DistribuirCartas.carta3.getValor().ordinal() == DistribuirCartas.manilha && DistribuirCartas.carta6.getValor().ordinal() == DistribuirCartas.manilha){
+            if(DistribuirCartas.carta3.getNaipe().ordinal() > DistribuirCartas.carta6.getNaipe().ordinal()){
+                System.out.println("Rodada ganha");
+                Pontos.somarPontos++;
+                Pontos.SomarPtsTruco++;
+                Turno.rodada++;
+            }else{
+                System.out.println("Voce perdeu");
+                Pontos.SomarPtsAdv++;
+                Pontos.SomarPtsTrucoAd++;
+                Turno.rodada++;
+            }
+        }else if(DistribuirCartas.carta3.getValor().ordinal() == DistribuirCartas.manilha){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
             Turno.rodada++;
-        }else if(DistribuirCartas.carta6.getValor().ordinal() + 1 > DistribuirCartas.vira.getValor().ordinal()){
+        }else if(DistribuirCartas.carta6.getValor().ordinal() == DistribuirCartas.manilha){
             System.out.println("Voce perdeu");
             Pontos.SomarPtsAdv++;
             Pontos.SomarPtsTrucoAd++;
             Turno.rodada++;
-        }else */if(DistribuirCartas.carta3.getValor().ordinal() > DistribuirCartas.carta6.getValor().ordinal()){
+        }else if(DistribuirCartas.carta3.getValor().ordinal() > DistribuirCartas.carta6.getValor().ordinal()){
             System.out.println("Rodada ganha");
             Pontos.somarPontos++;
             Pontos.SomarPtsTruco++;
@@ -191,13 +278,13 @@ public class PartidaController {
 
     public static int caseTruco(){
         System.out.println("Trucoooooooooooooooo marreco");
-        if(DistribuirCartas.carta4.getValor().ordinal() > DistribuirCartas.vira.getValor().ordinal() ||
-           DistribuirCartas.carta5.getValor().ordinal() > DistribuirCartas.vira.getValor().ordinal() ||
-           DistribuirCartas.carta6.getValor().ordinal() > DistribuirCartas.vira.getValor().ordinal()){
+        if(DistribuirCartas.carta4.getValor().ordinal() > DistribuirCartas.manilha ||
+           DistribuirCartas.carta5.getValor().ordinal() > DistribuirCartas.manilha ||
+           DistribuirCartas.carta6.getValor().ordinal() > DistribuirCartas.manilha){
                 System.out.println("***Desce ladrao****");
                 Truco.CaseTruco();
         }else{
-            System.out.println("Eu corro");
+            System.out.println("***To fora***");
             Pontos.somarTentos++;
             Turno.rodada = 1;
             DistribuirCartas.distribuirCartas();

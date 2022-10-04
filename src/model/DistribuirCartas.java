@@ -13,6 +13,8 @@ public class DistribuirCartas {
     public static Carta carta5 = new Carta();
     public static Carta carta6 = new Carta();
     public static Carta vira = new Carta();
+    public static int manilhaCarta;
+    public static int manilha;
 
     public static int distribuirCartas(){
         baralho = new Baralho();
@@ -24,6 +26,8 @@ public class DistribuirCartas {
         carta5 = baralho.retirarUmCarta();
         carta6 = baralho.retirarUmCarta();
         vira = baralho.retirarUmCarta();
+        manilhaCarta = vira.getValor().ordinal();
+        manilha = manilhaCarta + 1;
         return 0;
     }
     

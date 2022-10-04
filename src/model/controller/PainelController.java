@@ -46,7 +46,6 @@ public class PainelController {
                 DistribuirCartas.distribuirCartas();
                 Truco.pedidoTruco = 0;
             }
-            
             int op;
             System.out.println();
             System.out.println("Rodada: " + Turno.rodada);
