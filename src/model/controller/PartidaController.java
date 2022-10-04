@@ -80,6 +80,12 @@ public class PartidaController {
             DistribuirCartas.distribuirCartas();
             Pontos.somarPontos = 0;
             System.out.println("***Voce ganhou a rodada***");
+        }else if(Pontos.somarPontos == 1 && Pontos.SomarPtsAdv == 1){
+            Pontos.somarTentos++;
+            Turno.rodada = 1;
+            DistribuirCartas.distribuirCartas();
+            Pontos.somarPontos = 0;
+            System.out.println("***Voce ganhou a rodada***");
         }else if(Pontos.somarPontos == 2){
             Pontos.somarTentos++;
             Turno.rodada = 1;
@@ -170,6 +176,12 @@ public class PartidaController {
             DistribuirCartas.distribuirCartas();
             Pontos.somarPontos = 0;
             System.out.println("***Voce ganhou a rodada***");
+        }else if(Pontos.somarPontos == 1 && Pontos.SomarPtsAdv == 1){
+            Pontos.somarTentos++;
+            Turno.rodada = 1;
+            DistribuirCartas.distribuirCartas();
+            Pontos.somarPontos = 0;
+            System.out.println("***Voce ganhou a rodada***");
         }else if(Pontos.somarPontos == 2){
             Pontos.somarTentos++;
             Turno.rodada = 1;
@@ -256,6 +268,12 @@ public class PartidaController {
             System.out.println("***Voce perdeu a rodada***");
         }else if(Pontos.somarTentosAd == 11 && Pontos.somarPontos == 2){
             Pontos.somarPontos = Pontos.somarPontos + 3;
+            Turno.rodada = 1;
+            DistribuirCartas.distribuirCartas();
+            Pontos.somarPontos = 0;
+            System.out.println("***Voce ganhou a rodada***");
+        }else if(Pontos.somarPontos == 1 && Pontos.SomarPtsAdv == 1){
+            Pontos.somarTentos++;
             Turno.rodada = 1;
             DistribuirCartas.distribuirCartas();
             Pontos.somarPontos = 0;
