@@ -24,8 +24,6 @@ Com os marrecos cadastrados, escolha a opção 1 do menu para iniciar a partida.
 
 ## Contatos:
 Aluno: Marcos Vinícius Jacometti
-
-e-mail: marcosjacometti10@gmail.com
-Telefone: 19 99940-9486
+Aluno: Luiz Fernando Moretto
 
 Obrigado! :)
